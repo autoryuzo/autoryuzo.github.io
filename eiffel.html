@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования Eiffel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #007acc;
+            color: #333;
+        }
+
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 400px;
+            height: auto;
+        }
+
+        .gif-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #2f4a5d;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            outline: none;
+            flex: 1;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .tabs button:hover {
+            background-color: #005b99;
+        }
+
+        .tabs button.active {
+            background-color: white;
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007acc;
+            color: white;
+            position: relative;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Eiffel_logo.svg" alt="Eiffel Logo" class="logo">
+        <h1>Курмакаев Нияз Раилевич</h1>
+        <h1>Язык программирования Eiffel</h1>
+        <div class="gif-container">
+            <iframe src="https://giphy.com/embed/nGMnDqebzDcfm" width="100" height="100" frameBorder="0"></iframe>
+        </div>
+    </header>
+    <div class="tabs">
+        <button class="tablink active" onclick="openTab(event, 'overview')">Обзор</button>
+        <button class="tablink" onclick="openTab(event, 'examples')">Примеры</button>
+        <button class="tablink" onclick="openTab(event, 'sources')">Источники</button>
+    </div>
+
+    <div id="overview" class="tab-content active">
+        <div class="tabs">
+            <button class="subtablink active" onclick="openSubTab(event, 'purpose')">Предназначение</button>
+            <button class="subtablink" onclick="openSubTab(event, 'history')">История</button>
+            <button class="subtablink" onclick="openSubTab(event, 'paradigms')">Парадигмы</button>
+            <button class="subtablink" onclick="openSubTab(event, 'features')">Особенности</button>
+        </div>
+
+        <div id="purpose" class="tab-content active">
+            <h2>Предназначение</h2>
+            <p><strong>Eiffel (Эйфель) </strong> — объектно-ориентированный язык программирования с алголоподобным
+                синтаксисом, разработанный Бертраном Мейером. В этом языке впервые был реализован метод контрактного
+                программирования.</p>
+            <p><strong>Eiffel</strong> — это наиболее комплексный подход к созданию успешного объектно-ориентированного
+                программного обеспечения. Он предназначен для разработки программ, которые отличаются высокой
+                надежностью и эффективностью на протяжении всего жизненного цикла.</p>
+            <h3>Преимущества использования Eiffel</h3>
+            <ul>
+                <li><strong>Дешевле</strong> — Вы тратите меньше на разработку, отладку и поддержку.</li>
+                <li><strong>Лучше</strong> — Вы предотвращаете ошибки до того, как они станут проблемой.</li>
+                <li><strong>Короткое время выхода на рынок</strong> — Вы выпускаете качественные продукты раньше ваших
+                    конкурентов.</li>
+                <li><strong>Проще</strong> — В плане понимания, поддержки, повторного использования и расширения.</li>
+            </ul>
+            <h3>Основные цели Eiffel</h3>
+            <ul>
+                <li><strong>Обеспечение</strong> надежности и качества кода с помощью строгих инвариантов и контрактного
+                    программирования.</li>
+                <li><strong>Поддержка</strong> эффективного и гибкого механизма наследования классов.</li>
+                <li><strong>Упрощение</strong> разработки масштабируемых и многокомпонентных приложений.</li>
+                <li><strong>Создание программного обеспечения</strong>, легко поддерживаемого и обновляемого благодаря
+                    четким архитектурным принципам.</li>
+            </ul>
+
+            <p>Основной акцент в языке сделан на создании легко тестируемого и поддерживаемого кода. Это достигается за
+                счет строгих правил контрактного программирования, которые обеспечивают строгие гарантии по отношению к
+                данным и поведению программы в процессе выполнения.</p>
+
+            <h3>Применение языка Eiffel</h3>
+            <p>Язык широко используется в различных сферах, включая:</p>
+            <ul>
+                <li>Разработка бизнес-приложений и систем управления данными.</li>
+                <li>Проектирование высоконагруженных систем с высокими требованиями к безопасности.</li>
+                <li>Разработка программного обеспечения для научных и инженерных задач, где надежность и точность
+                    критичны.</li>
+            </ul>
+
+            <p>Кроме того, Eiffel используется в образовательных целях для изучения принципов объектно-ориентированного
+                программирования и концепции контрактного программирования.</p>
+
+            <p>Системы, разработанные с использованием <strong>Eiffel</strong>, могут быть портированы на основные
+                платформы индустрии, включая:</p>
+            <ul>
+                <li>Windows 11, 10, Windows NT/2000/XP/Vista, включая CLS-совместимость с Microsoft .NET</li>
+                <li>Основные версии Unix</li>
+                <li>Macintosh OS X</li>
+                <li>Linux</li>
+                <li>OpenVMS</li>
+            </ul>
+
+            <h3>Единственный подход, который охватывает все этапы жизненного цикла</h3>
+            <p><strong>Eiffel</strong> является единственным подходом, который охватывает анализ, проектирование,
+                реализацию и сопровождение в одном фреймворке. Этот подход включает:</p>
+            <ul>
+                <li><strong>Метод Eiffel</strong> — основан на небольшом количестве мощных идей из информатики и
+                    программной инженерии. Одним из примеров является <em>Design by Contract</em> (Проектирование через
+                    контракт).</li>
+                <li><strong>Проектирование через контракт</strong> — определяет систему как набор компонентов,
+                    взаимодействующих через точно заданные контракты. Эти контракты активны и обеспечиваются на
+                    протяжении всего жизненного цикла программы.</li>
+                <li><strong>Единая модель продукта</strong> — все фазы жизненного цикла поддерживаются единой нотацией,
+                    и не нужно переходить с одного языка на другой, например, с языка анализа на язык проектирования.
+                </li>
+            </ul>
+
+            <p>Язык программирования <strong>Eiffel</strong> существует для выражения продуктов метода Eiffel,
+                поддерживает уникальные возможности, такие как контрактное программирование, обработку исключений,
+                безопасность от нулевых ссылок (void-safety) и другие возможности, которые редко встречаются в
+                конкурирующих технологиях.</p>
+        </div>
+        <div id="history" class="tab-content">
+            <h2>История создания</h2>
+
+            <p><strong>Eiffel</strong> был разработан Бертраном Мейером в 1985 году с целью создания языка
+                программирования, который объединяет мощь объектно-ориентированного подхода с высокой степенью
+                надежности и безопасности. Язык был назван в честь знаменитой Эйфелевой башни, символизируя прочность и
+                надежность, которые он стремился обеспечить в области программирования.</p>
+
+            <h3>Влияние других языков</h3>
+            <p>При разработке Eiffel были использованы идеи и концепции из других языков программирования, таких как:
+            </p>
+            <ul>
+                <li><strong>Simula</strong> — один из первых языков, предложивших концепцию объектов и классов.</li>
+                <li><strong>Algol-60</strong></li>
+                <li><strong>Ada</strong></li>
+            </ul>
+            <p>Также Эйфель сам непосредственно повлиял на множество современных языков, среди которых :</p>
+            <ul>
+                <li><strong>Delphi</strong></li>
+                <li><strong>C#</strong></li>
+                <li><strong>Ruby</strong></li>
+            </ul>
+
+            <p>Кроме того, в процессе создания языка было уделено внимание устранению недостатков и упрощению синтаксиса
+                предыдущих технологий. Концепция <em>Design by Contract</em> (Проектирование через контракт) была
+                внедрена для повышения надежности и безопасности программного обеспечения, что отличает Eiffel от многих
+                других языков.</p>
+
+            <h3>Основные этапы развития</h3>
+            <p>Язык развивался и совершенствовался на протяжении десятилетий. Вот несколько ключевых вех в его истории:
+            </p>
+            <ul>
+                <li>1985 — Начало разработки языка под руководством Бертрана Мейера.</li>
+                <li>1986 — Выпуск первой версии языка Eiffel и начало его использования в крупных промышленных проектах.
+                </li>
+                <li>2000-е годы — Разработка и распространение <strong>EiffelStudio</strong>, интегрированной среды
+                    разработки для Eiffel.</li>
+                <li>2005 — Eiffel стал языком, стандартизированным ISO</li>
+                <li>Современность — Постоянное совершенствование языка и его применения в различных сферах, включая
+                    финансы, образование, научные исследования и промышленность.</li>
+            </ul>
+
+            <p>Сегодня <strong>Eiffel</strong> используется в ряде крупных успешных проектов, а его методология
+                продолжает вдохновлять разработчиков, стремящихся создать надежные и расширяемые программные системы.
+            </p>
+
+        </div>
+        <div id="paradigms" class="tab-content">
+            <h2>Парадигмы программирования</h2>
+
+            <p><strong>Eiffel</strong> поддерживает несколько парадигм программирования, что делает его гибким и мощным
+                инструментом для разработки сложных программных систем. Основные парадигмы, реализованные в языке,
+                включают объектно-ориентированное программирование, контрактное программирование и обобщенное
+                программирование.</p>
+
+            <h3>Объектно-ориентированное программирование (ООП)</h3>
+            <p>Язык <strong>Eiffel</strong> является ярким примером объектно-ориентированного программирования, в
+                котором все сущности представлены как объекты, а основным механизмом взаимодействия между ними является
+                наследование и полиморфизм. <strong>Eiffel</strong> поддерживает:</p>
+            <ul>
+                <li><strong>Наследование</strong> — классы могут наследовать свойства и методы от родительских классов.
+                </li>
+                <li><strong>Полиморфизм</strong> — объекты могут быть использованы через интерфейсы, что позволяет им
+                    взаимодействовать с разными типами данных.</li>
+                <li><strong>Инкапсуляция</strong> — скрытие реализации и данных от внешнего мира, доступ к которым
+                    осуществляется только через публичные методы.</li>
+            </ul>
+
+            <h3>Проектирование через контракт (Design by Contract)</h3>
+            <p>Одной из уникальных особенностей <strong>Eiffel</strong> является поддержка концепции <em>Design by
+                    Contract</em> (Проектирование через контракт). Этот подход гарантирует, что объекты взаимодействуют
+                друг с другом на основе четко определенных контрактов, которые включают:</p>
+            <ul>
+                <li><strong>Предусловия</strong> — требования подпрограммы, т.е. то, что обязано быть истинным для
+                    выполнения подпрограммы. Если данные предусловия нарушены, то подпрограмма не должна вызываться ни в
+                    коем случае. Вся ответственность за передачу «правильных» данных лежит на вызывающей программе.</li>
+                <li><strong>Постусловия</strong> — условия, которые гарантируются самой подпрограммой. Кроме того,
+                    наличие постусловия в подпрограмме гарантирует ее завершение (т.е. не будет бесконечного цикла,
+                    например).</li>
+                <li><strong>Инварианты класса</strong> — глобальные свойства класса. Они определяют более глубокие
+                    семантические свойства и ограничения целостности, характеризующие класс.
+                </li>
+            </ul>
+            <p>Контракты помогают минимизировать ошибки и обеспечивают большую надежность программы, позволяя
+                разработчику убедиться в том, что компоненты системы работают так, как ожидается.</p>
+
+            <h3>Обобщенное программирование</h3>
+            <p>Ещё одной важной парадигмой в языке является обобщенное программирование, которое поддерживает
+                использование обобщений и шаблонов. <strong>Eiffel</strong> предоставляет мощные механизмы для работы с
+                <strong>обобщенными классами</strong>, что позволяет разработать гибкие и расширяемые компоненты, не
+                ограничиваясь типами данных. Это позволяет создавать программы, которые могут работать с различными
+                типами данных без необходимости многократного дублирования кода.
+            </p>
+
+            <h3>Конкурентность</h3>
+            <p><strong>Eiffel</strong> также поддерживает парадигму <strong>конкурентного программирования</strong>,
+                благодаря технологии <em>SCOOP</em> (Simple Concurrent Object-Oriented Programming). Она позволяет
+                разработчику легко создавать многозадачные программы, где объекты могут работать параллельно, при этом
+                избегая типичных проблем синхронизации и блокировки.</p>
+
+            <h3>Функциональный стиль</h3>
+            <p>Кроме объектно-ориентированного подхода, в языке <strong>Eiffel</strong> поддерживаются элементы
+                функционального программирования. Например, язык позволяет работать с функциями как с объектами, что
+                позволяет использовать такие концепции, как высшие функции и лямбда-выражения.</p>
+
+            <p>Таким образом, <strong>Eiffel</strong> является многопарадигмальным языком программирования, который
+                сочетает в себе преимущества различных стилей программирования, что делает его мощным инструментом для
+                создания сложных и надежных программных систем.</p>
+        </div>
+        <div id="features" class="tab-content">
+            <h2>Особенности языка Eiffel</h2>
+            <p>Язык <strong>Eiffel</strong> включает в себя ряд особенностей, которые делают его уникальным и мощным
+                инструментом для разработки программного обеспечения. Рассмотрим ключевые особенности:</p>
+
+            <h3>1. Объектно-ориентированная структура</h3>
+            <p><strong>Eiffel</strong> использует объектно-ориентированную структуру, где <strong>класс</strong>
+                является основной единицей декомпозиции программы, что помогает моделировать реальные объекты и их
+                взаимодействие, создавая надежные и гибкие системы.</p>
+
+            <h3>2. Дизайн по контракту</h3>
+            <p>Концепция <strong>Дизайна по контракту</strong> в <strong>Eiffel</strong> тесно интегрирована с другими
+                языковыми конструкциями, что позволяет четко задавать условия взаимодействия между объектами.</p>
+
+            <h3>3. Автоматическое управление памятью</h3>
+            <p>Автоматическое управление памятью в <strong>Eiffel</strong> обычно осуществляется через сборку мусора,
+                что упрощает управление ресурсами и уменьшает вероятность ошибок, связанных с утечками памяти.</p>
+
+            <h3>4. Наследование</h3>
+            <p><strong>Eiffel</strong> поддерживает <strong>множественное наследование</strong>, а также различные
+                механизмы, такие как <strong>переименование</strong>, <strong>переопределение</strong>, конструкция
+                <strong>select</strong> («выбор»), <strong>наследование без полиморфизма</strong>, и другие механизмы,
+                которые обеспечивают безопасность наследования.
+            </p>
+
+            <h3>5. Универсальное программирование</h3>
+            <p>Язык поддерживает как <strong>ограниченное</strong>, так и <strong>неограниченное обобщенное
+                    программирование</strong>, что позволяет создавать гибкие и обобщенные классы и методы.</p>
+
+            <h3>6. Единая система типов</h3>
+            <p><strong>Eiffel</strong> использует единую систему типов, которая включает как <strong>значащие</strong>,
+                так и <strong>ссылочные</strong> типы данных. Все типы, включая базовые, например
+                <strong>INTEGER</strong>, являются классами, что упрощает работу с типами и повышает гибкость системы.
+            </p>
+
+            <h3>7. Типо-безопасность</h3>
+            <p><strong>Eiffel</strong> обеспечивает <strong>статическую типо-безопасность</strong>, что позволяет
+                обнаруживать ошибки типов на этапе компиляции и повышает надежность кода.</p>
+
+            <h3>8. Защита от пустых ссылок</h3>
+            <p>Язык поддерживает <strong>статическую защиту от вызовов по пустой ссылке</strong>, используя механизм
+                прикрепленных типов (англ. <strong>attached-types mechanism</strong>), что помогает избежать ошибок,
+                связанных с нулевыми ссылками.</p>
+
+            <h3>9. Агенты</h3>
+            <p>Агенты в <strong>Eiffel</strong> — это объекты, которые сворачивают вычисления внутри себя. Они тесно
+                связаны с механизмами <strong>замыканий</strong> и <strong>лямбда-выражений</strong>, что позволяет
+                эффективно работать с функциями как объектами.</p>
+
+            <h3>10. «Единоразовые» процедуры</h3>
+            <p><strong>Единоразовые процедуры</strong> (англ. <strong>once</strong>) выполняются только один раз и
+                используются для совместного использования объектов и децентрализованной инициализации.</p>
+
+            <h3>11. Синтаксис</h3>
+            <p>Синтаксис языка <strong>Eiffel</strong> основан на ключевых словах, заимствованных из языков
+                <strong>ALGOL</strong> и <strong>Pascal</strong>. Он не требует использования разделителей (точка с
+                запятой в конце инструкции необязательна), что упрощает чтение и написание кода.
+            </p>
+
+            <h3>12. Нечувствительность к регистру</h3>
+            <p>Язык <strong>Eiffel</strong> нечувствителен к регистру, что означает, что идентификаторы и ключевые слова
+                можно писать в любом регистре.</p>
+        </div>
+    </div>
+
+    <div id="examples" class="tab-content active">
+        <div class="tabs">
+            <button class="subtablink active" onclick="openSubTab(event, 'helloworld')">Hello World</button>
+            <button class="subtablink" onclick="openSubTab(event, 'sleep')">Sleep</button>
+            <button class="subtablink" onclick="openSubTab(event, 'fileio')">FileIO</button>
+            <button class="subtablink" onclick="openSubTab(event, 'factorial')">Factorial</button>
+        </div>
+
+        <div id="helloworld" class="tab-content">
+            <h3>Hello, World!</h3>
+            <pre>
+    class
+        HELLO_WORLD
+    create
+        make
+    feature
+        make
+            do
+                print ("Hello, World!%N")
+            end
+    end
+            </pre>
+        </div>
+
+        <div id="sleep" class="tab-content">
+            <h3>Sleep</h3>
+            <p><strong>Описание</strong></p>
+            <p>Напишите программу, которая выполняет следующие действия в этом порядке:</p>
+            <ul>
+                <li>Введите время сна в единицах, которые наиболее естественны для вашего языка (миллисекунды, секунды,
+                    такты и т.д.). Эта единица должна быть указана в комментариях или описании.</li>
+                <li>Выведите сообщение "Сплю...".</li>
+                <li>Приостановите выполнение главного потока на указанное время.</li>
+                <li>Выведите сообщение "Проснулся!".</li>
+                <li>Завершите программу.</li>
+            </ul>
+            <p><strong>Примечания:</strong></p>
+            <p>Функция sleep определена в библиотечном классе EXECUTION_ENVIRONMENT. Поэтому демонстрационный класс
+                APPLICATION наследует от EXECUTION_ENVIRONMENT, чтобы использовать sleep.</p>
+            <p>Функция sleep принимает аргумент, который определяет количество наносекунд для приостановки выполнения
+                потока.</p>
+
+            <h4>Исходный код</h4>
+            <pre>
+    class
+        APPLICATION
+    inherit
+        EXECUTION_ENVIRONMENT
+    create
+        make
+    feature -- Initialization
+        make
+                -- Сон на заданное количество наносекунд.
+            do
+                print ("Введите количество наносекунд: ")
+                io.read_integer_64
+                print ("Сплю...%N")
+                sleep (io.last_integer_64)
+                print ("Проснулся!%N")
+            end
+    end
+            </pre>
+
+            <h4>Вывод программы (для сна в течение 10 секунд)</h4>
+            <pre>
+    Введите количество наносекунд: 10000000000
+    Сплю...
+    Проснулся!
+            </pre>
+        </div>
+
+        <div id="fileio" class="tab-content">
+            <h3>File IO</h3>
+            <p><strong>Описание задачи:</strong></p>
+            <p>Создайте файл <code>output.txt</code>, содержащий содержимое файла <code>input.txt</code>.</p>
+            <p><strong>Решение:</strong></p>
+            <pre>
+    class
+        APPLICATION
+    
+    create
+        make
+    
+    feature {NONE} -- Initialization
+    
+        make
+                -- Run application.
+            do
+                create input_file.make_open_read ("input.txt")
+                create output_file.make_open_write ("output.txt")
+    
+                from
+                    input_file.read_character
+                until
+                    input_file.exhausted
+                loop
+                    output_file.put (input_file.last_character)
+                    input_file.read_character
+                end
+    
+                input_file.close
+                output_file.close
+            end
+    
+    feature -- Access
+    
+        input_file: PLAIN_TEXT_FILE
+        output_file: PLAIN_TEXT_FILE
+    
+    end
+            </pre>
+        </div>
+
+        <div id="factorial" class="tab-content">
+            <h3>Нахождение факториала числа</h3>
+            <pre>
+                class
+                APPLICATION
+            
+            create
+                make
+            
+            feature -- Initialization
+                make
+                        -- Запускает выполнение программы.
+                    local
+                        n: INTEGER
+                    do
+                        print ("Введите число для вычисления факториала: ")
+                        io.read_integer
+                        n := io.last_integer
+            
+                        if n >= 0 then
+                            print ("Факториал " + n.out + " равен: " + factorial(n).out + "%N")
+                        else
+                            print ("Ошибка: факториал определён только для неотрицательных чисел.%N")
+                        end
+                    end
+            
+            feature -- Computation
+                factorial (n: INTEGER): INTEGER
+                        -- Вычисляет факториал числа `n`.
+                    do
+                        if n = 0 then
+                            Result := 1
+                        else
+                            Result := n * factorial(n - 1)
+                        end
+                    end
+            end
+            </pre>
+        </div>
+    </div>
+
+    <div id="sources" class="tab-content">
+        <h3>Источники</h3>
+        <div>
+            <h4>Литература</h4>
+            <ul>
+                <li><a href="https://archive.org/details/eiffellanguage0000meye" target="_blank">Eiffel: The
+                        Language</a> — Bertrand Meyer</li>
+                <li><a href="https://ru.wikipedia.org/wiki/Eiffel" target="_blank">Eiffel wikipedia</a> </li>
+                <li><a href="https://xakep.ru/2015/01/01/eiffel/" target="_blank">Эйфелева, но не башня...</a> — Юрий
+                    Язев </li>
+                <li><a href="https://www.eiffel.org/doc/eiffel/Eiffel" target="_blank">official website </a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Компиляторы</h4>
+            <ul>
+                <li><a href="https://www.eiffel.com/" target="_blank">EiffelStudio</a> — официальный компилятор Eiffel
+                </li>
+                <li><a href="https://github.com/berenddeboer/smarteiffel-bdb" target="_blank">SmartEiffel</a> —
+                    альтернативный компилятор Eiffel</li>
+            </ul>
+        </div>
+        <div>
+            <h4>IDE</h4>
+            <ul>
+                <li><a href="https://www.eiffel.com/" target="_blank">EiffelStudio</a> — интегрированная среда
+                    разработки для Eiffel</li>
+                <li><a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a> — поддержка Eiffel через
+                    плагины</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <footer>
+    </footer>
+
+    <script>
+        function openTab(event, tabId) {
+            // Убираем активность у всех вкладок и кнопок
+            const tabs = document.querySelectorAll('.tab-content');
+            const tablinks = document.querySelectorAll('.tablink');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tablinks.forEach(link => link.classList.remove('active'));
+
+            // Добавляем активность выбранной вкладке и кнопке
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function openSubTab(event, subTabId) {
+            // Убираем активность у всех подтабов и их кнопок
+            const parentContainer = event.currentTarget.closest('.tab-content');
+            const subTabs = parentContainer.querySelectorAll('.tab-content');
+            const subTabLinks = parentContainer.querySelectorAll('.subtablink');
+            subTabs.forEach(subTab => subTab.classList.remove('active'));
+            subTabLinks.forEach(link => link.classList.remove('active'));
+
+            // Добавляем активность выбранному подтабу и кнопке
+            document.getElementById(subTabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
